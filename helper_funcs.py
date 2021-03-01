@@ -15,6 +15,8 @@ from datetime import datetime, timedelta, time as Time
 import argparse
 
 # -----------------------------------------------------------------------------------------------------------------------
+
+
 def check_non_negative(value):
     ivalue = int(value)
     if ivalue < 0:
@@ -26,7 +28,8 @@ def check_non_negative(value):
 def check_positive(value):
     ivalue = int(value)
     if ivalue <= 0:
-        raise argparse.ArgumentTypeError(f"{value} is an invalid positive int value")
+        raise argparse.ArgumentTypeError(
+            f"{value} is an invalid positive int value")
     return ivalue
 
 
@@ -115,7 +118,7 @@ def plot_ta(s_ticker, df_ta, s_ta):
     plt.xlim(df_ta.index[0], df_ta.index[-1])
     plt.xlabel('Time')
     #plt.ylabel('Share Price ($)')
-    #if isinstance(df_ta, pd.DataFrame):
+    # if isinstance(df_ta, pd.DataFrame):
     #    plt.legend(df_ta.columns)
     plt.grid(b=True, which='major', color='#666666', linestyle='-')
     plt.minorticks_on()
@@ -243,7 +246,8 @@ def get_data(tweet):
     if '+' in tweet['created_at']:
         s_datetime = tweet['created_at'].split(' +')[0]
     else:
-        s_datetime = iso8601.parse_date(tweet['created_at']).strftime("%Y-%m-%d %H:%M:%S")
+        s_datetime = iso8601.parse_date(
+            tweet['created_at']).strftime("%Y-%m-%d %H:%M:%S")
 
     if 'full_text' in tweet.keys():
         s_text = tweet['full_text']
@@ -251,7 +255,7 @@ def get_data(tweet):
         s_text = tweet['text']
 
     data = {'created_at': s_datetime,
-            'text': s_text }
+            'text': s_text}
     return data
 
 
