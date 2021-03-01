@@ -1,5 +1,5 @@
 absl-py==0.11.0
-aiohttp==3.7.3
+aiohttp
 alpha-vantage==2.3.1
 appscript==1.1.2
 astunparse==1.6.3
