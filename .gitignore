@@ -5,3 +5,11 @@ __pycache__/
 .venv
 env/
 venv/
+Lib/
+Scripts/
+share/
+config_terminal.py
+LICENSE.txt
+pyvenv.cfg
+xlwings32-0.16.4.dll
+xlwings64-0.16.4.dll
